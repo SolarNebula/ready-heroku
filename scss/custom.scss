@@ -1,0 +1,35 @@
+
+$theme-colors: (
+        "primary": #ffffff
+);
+
+//$btn-border-radius-lg: 0;
+$btn-focus-box-shadow: none;
+$btn-font-size: 10pt;
+
+$btn-padding-y: 2px;
+$btn-padding-x: 2px;
+
+$btn-border-radius: 0px;
+
+$btn-border-width: 0px;
+
+
+.custom {
+  width: 100px !important;
+  height: 60px !important;
+}
+
+.btn:disabled{
+  color: black;
+}
+$btn-disabled-opacity: 1;
+
+
+//$btn-white-space:             nowrap; // Set to `nowrap` to prevent text wrapping
+
+
+//‎
+//sass scss/custom.scss CSS/main.css
+@import "../node_modules/bootstrap/scss/bootstrap";
+
