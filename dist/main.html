@@ -14,19 +14,28 @@
 </head>
 <body>
 
-<div class="row">
+<!--<div class="row">-->
+<!--<div class="d-flex align-content-start flex-wrap m-auto">-->
+<!--<div class="d-flex justify-content-between">-->
+
+<div class="position-relative">
+<!--    <div class="position-absolute top-0 start-0">-->
     <div class="col-4">
-        <div class="list-group w-auto" id="list-tab" role="tablist">
+<!--    <div class="d-flex align-content-start flex-wrap">-->
+        <div class="list-group badge bg-primary text-wrap fs-5" style="width: 10rem;" id="list-tab" role="tablist">
             <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">First</a>
             <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Second</a>
             <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Third</a>
             <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Fourth</a>
         </div>
     </div>
+<!--    </div>-->
+    <div class="position-absolute top-0 start-50 translate-middle-x ">
     <div class="col-8">
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-                <table class="table table-lg table-striped table-bordered table-responsive text-center">
+
+                <table class="table table-lg table-striped table-bordered table-responsive text-center w-auto">
                     <thead>
                     <tr>
                         <th scope="col"></th>
@@ -98,8 +107,9 @@
             <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">4</div>
         </div>
     </div>
+    </div>
 </div>
-<div>
+<div class="position-absolute top-50 start-0 translate-middle-y">
     <button class="btn-danger" id="active">RESET</button>
 </div>
 

@@ -27,15 +27,15 @@ const colRef = collection(db, 'table')
 
 
 
-let a = ['10','12','14','16','18']
-let b = ['pn','vt','cr','cht','pt','sb','vs']
-for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 7; j++){
-        setDoc(doc(db, 'table',a[i] + b[j]), {
-            value: null,
-            active: true
-        }).then();
-}}
+// let a = ['10','12','14','16','18']
+// let b = ['pn','vt','cr','cht','pt','sb','vs']
+// for (let i = 0; i < 5; i++) {
+//     for (let j = 0; j < 7; j++){
+//         setDoc(doc(db, 'table',a[i] + b[j]), {
+//             value: "",
+//             disabled: false
+//         }).then();
+// }}
 
 
 getDocs(colRef)
@@ -47,10 +47,12 @@ getDocs(colRef)
             // books.push({ ...doc.data(), id: doc.id })
             let itObj = doc.data()
             let temp = document.getElementById(doc.id)
-            console.log(temp.id)
-            temp.innerText = itObj.value;
-            temp.prop('disabled', itObj.active)
-            console.log(doc.id, itObj.value, itObj.active)
+
+            document.getElementById(doc.id).innerText = itObj.value
+            console.log(typeof(temp.id),typeof(itObj.disabled), typeof(itObj.value))
+            // temp.innerText = itObj.value;
+            temp.disabled = itObj.disabled
+            console.log(doc.id, itObj.disabled, itObj.value)
         })
     })
     .catch(err => {
@@ -84,6 +86,7 @@ exampleModal.addEventListener('show.bs.modal', function (event) {
     //
     // Update the modal's content.
     let modalTitle = exampleModal.querySelector('.modal-title')
+
     let modalBodyInput = exampleModal.querySelector('.modal-body input')
 
     modalTitle.textContent = recipient
@@ -117,13 +120,13 @@ sub.onclick = function submit(){
     document.getElementById(identify).disabled = true;
     setDoc(doc(db, 'table',identify), {
         value: first + " " + second+ " " + num,
-        active: false
+        disabled: true
     }).then();
 }
 
 const clear = document.getElementById('clear')
 clear.onclick = function clean(){
-    document.getElementById(identify).innerText = null;
+    document.getElementById(identify).innerText = "";
 }
 
 
